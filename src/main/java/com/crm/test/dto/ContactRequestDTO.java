@@ -3,6 +3,8 @@ package com.crm.test.dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+import java.time.LocalDate;
+
 public record ContactRequestDTO(
 
         @NotNull(message = "Company ID is required")
@@ -22,7 +24,7 @@ public record ContactRequestDTO(
         String nickname,
 
         @NotNull(message = "Birthday name is required")
-        String birthday,
+        LocalDate birthday,
 
         @NotBlank(message = "Gender is required")
         String gender,

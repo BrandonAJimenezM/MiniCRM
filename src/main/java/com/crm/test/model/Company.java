@@ -18,10 +18,12 @@ import java.util.List;
 public class Company {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_company")
+    @SequenceGenerator(name = "seq_company", sequenceName = "SEQ_COMPANY", allocationSize = 1)
     @Column(name = "IDCOMPANY")
     private Integer idCompany;
 
-    @Column(name = "EMPLOYER_IDENTIFICACTION_NUMBER")
+    @Column(name = "EMPLOYER_IDENTIFICATION_NUMBER")
     private String employerIdentificationNumber;
 
     @Column(name = "NAME")

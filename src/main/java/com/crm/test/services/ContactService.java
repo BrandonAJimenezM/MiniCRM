@@ -36,9 +36,9 @@ public class ContactService {
         contact.setGender(dto.gender());
         contact.setIsActive(dto.isActive());
 
-        contactRepository.save(contact);
+        Contact saved = contactRepository.save(contact);
+        return toContactDTO(saved);
 
-        return toContactDTO(contact);
     }
 
     public List<ContactDTO> getAll() {
@@ -88,9 +88,9 @@ public class ContactService {
         contact.setGender(dto.gender());
         contact.setIsActive(dto.isActive());
 
-        contactRepository.save(contact);
+        Contact saved = contactRepository.save(contact);
 
-        return toContactDTO(contact);
+        return toContactDTO(saved);
     }
 
     public void delete(Integer id) {

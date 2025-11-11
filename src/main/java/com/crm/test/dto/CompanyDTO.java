@@ -5,6 +5,7 @@ import com.crm.test.model.CompanyLocation;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ public record CompanyDTO(
         @NotBlank(message = "Name is required")
         String name,
 
-        @NotBlank(message = "Structure is required")
+        @NotNull(message = "Structure is required")
         Structure structure,
 
         @NotBlank(message = "Invalid email")
@@ -25,7 +26,7 @@ public record CompanyDTO(
         @NotBlank(message = "Number is required")
         String phoneNumber,
 
-        @NotBlank(message = "isActive must be true o false")
+        @NotNull(message = "isActive must be true o false")
         Boolean isActive,
 
         @Valid

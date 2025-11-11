@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,8 +17,10 @@ import lombok.NoArgsConstructor;
 public class Contact {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_contact")
+    @SequenceGenerator(name = "seq_contact", sequenceName = "SEQ_CONTACT", allocationSize = 1)
     @Column(name = "IDCONTACT")
-    private int idContact;
+    private Integer idContact;
 
     @ManyToOne
     @JoinColumn(name = "IDCOMPANY")
@@ -38,7 +42,7 @@ public class Contact {
     private String nickname;
 
     @Column(name = "BIRTHDAY")
-    private String birthday;
+    private LocalDate birthday;
 
     @Column(name = "GENDER")
     private String gender;
